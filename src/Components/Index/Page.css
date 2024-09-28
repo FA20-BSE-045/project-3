@@ -1,0 +1,243 @@
+.camp-page {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  padding: 20px; /* Added padding for smaller screens */
+}
+
+.overlay {
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-100vw); /* Start off the screen on the left */
+  animation: slideIn 1.5s ease-out forwards; /* Add animation */
+  max-width: 90%; /* Responsive width adjustment */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100vw); /* Starts off the screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Ends at the center */
+    opacity: 1;
+  }
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+
+.content p {
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  justify-content: center;
+  font-family: Lato, sans-serif;
+}
+
+.buttons {
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: transparent;
+  color:white;
+  border-color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  background-color:  #c4c411;
+}
+.btn1:hover:hover {
+  background-color:  #c4c411;
+}
+
+.btn1 {
+  background-color: #A79770;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+
+.camp-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap; /* Enables wrapping for smaller screens */
+}
+
+.option {
+  background-color: #A79770;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.option img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.option p {
+  font-size: 15px;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+}
+
+.option:hover {
+  background-color: #c4c411;
+  transform: scale(1.1);
+}
+
+.image-credit {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small devices (landscape phones, 520px and down) */
+@media (max-width: 520px) {
+  .overlay {
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Reduce padding for smaller screens */
+    text-align: center;
+  }
+  
+  .camp-page {
+    height: 100%; /* Allow the height to adjust dynamically based on content */
+    padding: 15px; /* Add some padding to the sides */
+  }
+
+  .content h1 {
+    font-size: 35px; /* Smaller heading for mobile */
+  }
+
+  .content p {
+    font-size: 16px; /* Smaller text for mobile */
+    line-height: 1.4; /* Adjust line-height for readability */
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    width: 100%; /* Buttons take up full width for better UX */
+    border-radius: 20px;
+  }
+  .btn1{
+    font-size: 0.9rem;
+    border-radius: 20px;
+
+  }
+  .camp-options {
+    gap: 10px;
+    flex-direction: column; /* Stack options vertically */
+    align-items: center;
+    width: 100%; /* Ensure full width on smaller screens */
+  }
+
+  .option {
+    width: 100%; /* Take up most of the width on small screens */
+    margin: 10px 0; /* Add spacing between the options */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .image-credit {
+    font-size: 0.8rem; /* Make image credit text smaller */
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .camp-page{
+    height: 100%;
+  }
+  .content h1 {
+    font-size: 45px; /* Reduce heading size */
+  }
+
+  .content p {
+    font-size: 18px; /* Slightly smaller text */
+  }
+
+  .btn, .btn1 {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    width: 50%;
+  }
+
+  .camp-options {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .option {
+    width: 80%; /* Two options side-by-side on tablets */
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .camp-page{
+    height: 100%;
+  }
+  .camp-options {
+    justify-content: space-between;
+  }
+
+  .option {
+    width: 150px; /* Fixed width for desktop */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .camp-page{
+    height: 100%;
+  }
+  .content h1 {
+    font-size: 60px;
+  }
+
+  .content p {
+    font-size: 20px;
+  }
+
+  .option {
+    width: 150px;
+  }
+}
